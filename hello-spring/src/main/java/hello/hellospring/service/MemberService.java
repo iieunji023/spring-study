@@ -11,6 +11,7 @@ import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 @Transactional // JPA는 데이터를 저장/변경할 때, Transaction이 있어야 한다.
 public class MemberService {
 
@@ -50,9 +51,7 @@ public class MemberService {
      */
     public List<Member> findMembers() {
         return memberRepository.findAll();
-
-    }
-
+        }
     public Optional<Member> findOne(Long id) {
         return memberRepository.findById(id);
 
